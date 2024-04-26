@@ -39,7 +39,7 @@ def process_csv_from_s3(event, output_bucket):
         s3.download_file(input_bucket, input_file_key, local_input_file)
         first_names, emails = extract_values_from_csv(local_input_file)
         
-        # Generate output file name with timestamp
+        # Generate output file name with timestamp---albin
         timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
         output_file = f'output_{input_file_name}_{timestamp}.csv'
         
