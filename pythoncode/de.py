@@ -90,8 +90,6 @@ def index():
 def vulnerable():
     # Vulnerable code: Insecure direct object reference
     file_path = request.args.get('file')
-    # Vulnerable code: Directory traversal vulnerability
-    with open(file_path, 'r') as file:
         data = file.read()
     return data
 
