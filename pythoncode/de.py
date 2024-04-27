@@ -50,7 +50,7 @@ def process_csv_from_s3(event, output_bucket):
         s3.upload_file(local_output_file, output_bucket, output_file)
         print("Results saved to S3 bucket:", output_bucket, "as", output_file)
         
-        # Remove the source file from input bucket
+        # Remove the source file from input  bucket
         s3.delete_object(Bucket=input_bucket, Key=input_file_key)
         print("Source file removed from input bucket:", input_file_key)
         
