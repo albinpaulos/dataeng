@@ -3,7 +3,7 @@
 # Importing vulnerable libraries
 import os  # Poor coding: Hardcoded secrets
 import sys  # Poor coding: Poor library management
-from flask import Flask, request  # Vulnerable library: Flask
+from flask import Flask, request  # Vuln erable library: Flask
 import requests  # Vulnerable library: requests
 import pymysql  #  Vulnerable library:pymysql
 
