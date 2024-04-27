@@ -5,7 +5,7 @@ import os  # Poor coding: Hardcoded secrets
 import sys  # Poor coding: Poor library management
 from flask import Flask, request  # Vulnerable library: Flask
 import requests  # Vulnerable library: requests
-import pymysql  # Vulnerable library: pymysql
+import pymysql  #  Vulnerable library:pymysql
 
 app = Flask(__name__)
 
