@@ -42,13 +42,13 @@ jobs:
       uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: 'trivy-results.sarif'
-    # - name: Deploy Modified Files
-    #   run: |
-    #     # Constants
-    #     LAMBDA_FUNCTION_NAME=data-test
-    #     # Zip only the modified .py files from the commit
-    #     git diff-tree --no-commit-id --name-only -r HEAD | grep "\.py$" | zip -@ updated_lambda.zip
-    #     # Update Lambda function code directly from the zip file
-    #     aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --zip-file fileb://updated_lambda.zip
-    #     # Cleanup
-    #     rm updated_lambda.zip
+    - name: Deploy Modified Files
+      run: |
+        # Constants
+        LAMBDA_FUNCTION_NAME=data-test
+        # Zip only the modified .py files from the commit
+        git diff-tree --no-commit-id --name-only -r HEAD | grep "\.py$" | zip -@ updated_lambda.zip
+        # Update Lambda function code directly from the zip file
+        aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --zip-file fileb://updated_lambda.zip
+        # Cleanup
+        rm updated_lambda.zip
