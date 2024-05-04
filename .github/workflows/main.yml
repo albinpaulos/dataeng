@@ -45,7 +45,7 @@ jobs:
     - name: Deploy Modified Files
       run: |
         # Constants
-        LAMBDA_FUNCTION_NAME=data-test
+        LAMBDA_FUNCTION_NAME=nancy-test
         # Zip only the modified .py files from the commit
         git diff-tree --no-commit-id --name-only -r HEAD | grep "\.py$" | zip -@ updated_lambda.zip
         # Update Lambda function code directly from the zip file
